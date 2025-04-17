@@ -1,0 +1,24 @@
+services:
+  app:
+    build: .
+    container_name: project-server
+    command: gunicorn aws_project.wsgi:application --bind 0.0.0.0:8000
+    volumes:
+      - .:/app
+    ports:
+      - "8000:8000"
+    depends_on:
+      - redis
+    environment:
+      - CELERY_BROKER_URL=redis://redis:6379/0
+
+  redis:
+    image: redis:alpine
+
+  celery:
+    build: .
+    command: celery -A aws_project worker --loglevel=info
+    volumes:
+      - .:/app
+    depends_on:
+      - redis
