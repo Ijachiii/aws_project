@@ -28,11 +28,12 @@ This project is a containerized Django application deployed to AWS using Terrafo
 # Build and start the services
 docker-compose build
 docker-compose up
+```
 
 Once started, the Django app will be available at:
 📍 http://localhost:8000 (or whichever port you mapped)
 
-### ⚙️ Setup
+### Terraform Usage
 terraform init
 terraform apply -var="secret_key=your-django-secret-key" -auto-approve
 
