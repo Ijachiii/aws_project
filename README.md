@@ -38,7 +38,7 @@ terraform init
 terraform apply -var="secret_key=your-django-secret-key" -auto-approve
 
 
-✅ Features
+### ✅ Features
 	•	Background task processing via Celery + Redis
 	•	Stateless, containerized architecture
 	•	Infrastructure as code with Terraform
