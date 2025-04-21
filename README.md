@@ -32,7 +32,7 @@ docker-compose up
 Once started, the Django app will be available at:
 📍 http://localhost:8000 (or whichever port you mapped)
 
-### Terraform Usage
+### ⚙️ Setup
 terraform init
 terraform apply -var="secret_key=your-django-secret-key" -auto-approve
 
